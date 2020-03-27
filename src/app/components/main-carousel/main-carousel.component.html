@@ -1,0 +1,13 @@
+<div class="container">
+    <ngb-carousel *ngIf="event_list">
+      <ng-template ngbSlide *ngFor="let event of event_list">
+        <div class="picsum-img-wrapper">
+          <img [src]="event.img" alt="event.eventLocation">
+       </div>
+        <div class="carousel-caption">
+          <h3>{{ event.eventLocation }}</h3>
+          <p [innerText]="event.eventDescription"></p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+</div>

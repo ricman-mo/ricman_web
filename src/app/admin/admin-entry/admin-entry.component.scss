@@ -1,0 +1,17 @@
+.tree-entry-container {
+  display: flex;
+
+  .tree-leftbar-nav{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    background-color: grey;
+  }
+  .tree-center-nav{
+    background-color:white;
+  }
+  .article-edit-right {
+    background-color:white;
+    flex-grow: 1;
+  }
+}

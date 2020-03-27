@@ -1,0 +1,30 @@
+.aritcle-list-by-category-container {
+
+  .create-new-button{
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .category-item{
+    padding: 6px;
+    border-bottom: 1px solid #ccc!important;
+    border-top: 1px solid #ccc!important;
+    display: flex;
+
+    .item-name-span {
+      display:block;
+      padding: 5px;
+      max-width: 300px;
+    }
+    .item-icon-span {
+      padding: 6px;
+      display: block;
+    }
+    .item-icon-span-right {
+      right: 0px;
+    }
+  }
+  .category-item-selected {
+    border-left: 6px solid rgb(248, 212, 5)!important
+  }
+}

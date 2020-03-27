@@ -1,0 +1,28 @@
+.bd-example {
+  padding: 1.5rem;
+  margin-right: 0;
+  margin-left: 0;
+  border-width: .2rem
+}
+.content-container {
+  display: block;
+}
+
+.message-container{
+  display: block;
+  background: lavender;
+  margin-left: -30px;
+  margin-top: 1rem;
+}
+.article-item-viewer_container {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  flex-wrap: wrap ;
+}
+
+.app-main-carousel-left_container {
+  color: red($color: #000000);
+}
+
+

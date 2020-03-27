@@ -1,0 +1,18 @@
+.article-tree-container{
+  position: relative;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  width: 230px;
+  list-style: none;
+  font-size: 14px;
+
+  .tree-goback-button {
+    padding: 5px !important;
+  }
+
+  .tree-addnew-button{
+    cursor: pointer;
+    padding: 5px !important;
+  }
+}

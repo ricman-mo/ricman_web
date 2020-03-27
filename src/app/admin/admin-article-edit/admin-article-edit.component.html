@@ -1,0 +1,18 @@
+<div class="admin-article-edit-container">
+  <div><input class="w-100 article-title-input" [(ngModel)]="articleTitle"></div>
+  <div class="admin-article-edit-tool">
+    <md-editor name="Content" 
+      [upload]="doUpload" 
+      [preRender]="preRenderFunc" 
+      [(ngModel)]="markdowndata" 
+      [mode]="mode" 
+      [options]="options" 
+       [height]="'85vh'" 
+      required 
+      maxlength="5000">
+    </md-editor>
+  </div>
+  <div class="pull-right">
+  <button type="button" class="btn btn-primary" (click)="onSave()">保存</button>
+  </div>
+</div>

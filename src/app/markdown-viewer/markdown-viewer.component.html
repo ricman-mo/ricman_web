@@ -1,0 +1,14 @@
+<div class="container">
+<md-editor name="Content" 
+  [upload]="doUpload" 
+  [preRender]="preRenderFunc" 
+  [(ngModel)]="markdowndata" 
+  [height]="'100vh'" 
+  [mode]="mode" 
+  [options]="options" 
+  required 
+  maxlength="500">
+</md-editor>
+<textarea class="variable-textarea col-md-12 markdown-viewer-container" [(ngModel)]="markdowndata"></textarea>
+<markdown class="variable-binding" [data]="markdowndata"></markdown>
+</div>

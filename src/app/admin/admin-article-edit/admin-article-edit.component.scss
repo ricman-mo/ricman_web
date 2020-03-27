@@ -1,0 +1,18 @@
+.admin-article-edit-container {
+  padding: 5px;
+  height: 100vh;
+  .article-title-input {
+    height: 50px;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 30px;
+    margin-bottom: 1px;
+  }
+
+  .admin-article-edit-tool {
+    padding: 1px;
+    .edit-context{
+      height: 100vh;
+    }
+  }
+}

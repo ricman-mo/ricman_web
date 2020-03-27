@@ -1,0 +1,14 @@
+<div class="aritcle-list-by-category-container">
+  <div class="create-new-button" (click)="addNew()">
+  <i class="fa fa-plus"></i> <span >新建文章</span>
+  </div>
+  <div class="category-item col-md-12 " *ngFor="let item of datas let i = index"
+  (click)="selectItem(item, i)" 
+   [ngClass]="{'category-item-selected': selectedIndex === i}"
+  >
+   <span class="item-icon-span" *ngIf="selectedIndex !== i"><i class="fa fa-file-text-o" aria-hidden="true"></i></span>
+   <span class="item-icon-span" *ngIf="selectedIndex === i"><i class="fa fa fa-pencil-square-o" aria-hidden="true"></i></span>
+   <span class="item-name-span w-100 text-truncate">{{item.title}}</span>
+   <span class="item-icon-span justify-content-end" *ngIf="selectedIndex === i"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></span>
+  </div>
+</div>

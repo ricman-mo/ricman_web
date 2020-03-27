@@ -1,0 +1,30 @@
+<div class="article-tree-container">
+  <div class="text-center tree-goback-button">
+  <button type="button" class="btn btn-outline-danger">回到首页</button>
+  </div>
+  <div class="tree-addnew-button" (click)="addCategory()">
+  <i class="fa fa-plus"></i> <span >增加分类</span>
+  </div>
+  <div class="list-group" >
+    <span (click) = "setActive(i)"    
+    [class.active]="selectedIndex === i" 
+    class="list-group-item list-group-item-action" 
+    *ngFor="let item of items let i = index">
+      {{item.name}}
+      <div class="btn-group dropright  pull-right" >
+        <span type="button" data-toggle="dropdown" aria-haspopup="true" 
+        aria-expanded="false" (click) = "setActive(i)">
+          <i class="fa fa-cog"></i>
+        </span>
+        <div class="dropdown-menu">
+          <button  class="dropdown-item" type="button" 
+          (click)="open(item)">编辑名称</button >
+          <button  class="dropdown-item" type="button"(click)="delete(item)">删除分类</button >
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+
+

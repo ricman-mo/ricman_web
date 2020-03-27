@@ -1,0 +1,11 @@
+.scroll-message-container {
+  border: dotted 2px;
+  background-color: white;
+  p{
+    text-align:left;
+    padding:10px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+   }
+}

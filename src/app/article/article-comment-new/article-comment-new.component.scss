@@ -1,0 +1,66 @@
+$comment-wrap-padding-left: 56px;
+.article-comment-container {
+  padding:0px;
+  .article-comment-author-wrap {
+    display: flex;
+    .author-header {
+      height: 40px;
+      .author-img {
+        width: 40px;
+        height: 40px
+      }
+    }
+    .author-name {
+      padding-left: 20px;
+      padding:10px;
+      font-size: 16px;
+      color: #27282d;
+      font-weight: 500;
+      .article-author-title {
+        font-weight: 500
+      }
+      a {
+        color: #27282d;
+        text-decoration: none;
+        outline: none;
+      }
+    }
+  }
+  .article-comment-wrap {
+    margin-left: $comment-wrap-padding-left;
+    border-bottom: 1px solid #efefef;
+    .article-comment-context{
+      cursor: pointer;
+      font-size: 16px;
+      line-height: 26px;
+      color: #666;
+      word-wrap: break-word;
+    }
+  }
+ 
+  .article-comment-interaction-wrap{
+    display: flex;
+    justify-content: space-between;
+    margin-left: $comment-wrap-padding-left;
+    .comment-time {
+      padding-top: 10px;
+      font-size: 14px;
+      color: #d1d1d1
+    }
+    .comment-operate {
+      padding-right: 5px;
+      .operate-item {
+        margin-left: 50px;
+        margin-right: 1px;
+        padding-top: 10px;
+        display: inline-block;
+        color: #d1d1d1;
+        font-size: 14px;
+        .item-count {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+  
+}

@@ -1,0 +1,26 @@
+.article-item-viewer-container {
+  margin-top: 1rem;
+  margin-right: 1rem;
+
+  .article-item-viewer-body {
+    display: flex;
+    flex-flow: row;
+  }
+  .card-img-top{
+    height: 200px;
+  }
+  .card-img-top:hover
+  {
+    -webkit-transform: scaleY(0.9);
+    -ms-transform: scaleY(0.9);
+    transform: scaleY(0.9);
+  }
+
+  .card-content {
+    display: inline;
+  }
+  .article-item-viewer-author {
+    right: 0px;
+    text-align: right;
+  }
+}

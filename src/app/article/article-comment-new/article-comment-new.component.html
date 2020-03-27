@@ -1,0 +1,31 @@
+<div class="container article-comment-container">
+  <div class="article-comment-author-wrap">
+    <div class="author-header">
+        <a href="{{authorProfile}}"><img class="author-img" bind-src="authorHeaderSrc" alt="authorName" /></a>
+    </div>
+    <div  class="author-name">
+        <a href="{{authorProfile}}"> <i  class="article-author-title">{{authorName}}</i></a>
+    </div>
+  </div>
+
+  <div class="article-comment-wrap">
+   <p class="article-comment-context">{{comment_context}}</p>
+  </div>
+  <div class="article-comment-interaction-wrap">
+  <span class="comment-time">{{commentTime}}</span>
+  <div class="comment-operate">
+  <span class="operate-item">
+   <i class="fa fa-thumbs-up"></i>
+    <i class="item-count">{{likeNumber}}</i>
+   </span>
+    <span class="operate-item">
+    <i class="fa fa-thumbs-down"></i>
+    <i  class="item-count">{{unlikeNumber}}</i>
+   </span>
+    <span class="operate-item">
+    <i class="fa fa-ellipsis-h"></i>
+   </span>
+  </div>
+   
+  </div>
+</div>

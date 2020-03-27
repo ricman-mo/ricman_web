@@ -1,0 +1,39 @@
+.article-overview-badge-container{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  height: 380px;
+  justify-content: space-between;
+  .article-overview-badge-button{
+    cursor: pointer;
+    width: 56px;
+    height: 56px;
+    padding: 0;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 56px;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    position: relative;
+    border: 1px solid #d1d1d1;
+    color: #d1d1d1;
+  }
+  
+  .badge-icon {
+    overflow: hidden;
+    position: absolute;
+    margin-left: -5px;
+    margin-top: 11px
+  }
+
+  .badge-icon-1 {
+    overflow: hidden;
+  }
+  
+  .counter.counter-lg {
+    top: -20px !important;
+    right: -20px !important;
+  }
+}
+
