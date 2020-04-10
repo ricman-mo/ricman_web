@@ -18,7 +18,7 @@ const routes: Routes = [
   children: [
     { path: '', component: HomeComponent, pathMatch: 'full'},
     { path: 'view', component: MarkdownViewerComponent},
-    { path: 'article', component: ArticleViewerComponent},
+    { path: 'article/:id', component: ArticleViewerComponent},
   ]},
   { path: 'admin_ricman', component: AdminEntryComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },

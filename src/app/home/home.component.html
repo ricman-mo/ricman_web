@@ -1,8 +1,8 @@
 <div class="container">
- <app-main-carousel class="app-main-carousel_container col-md-12" ></app-main-carousel>
+
  <div class="row">
   <div class="article-item-viewer_container col-md-10"> 
-   <article-item-viewer  *ngFor="let policy of policies" ></article-item-viewer>
+   <article-item-viewer  *ngFor="let item of atricles"  [article] = "item" ></article-item-viewer>
   </div>
   <div class="message-container col-md-2">
     <app-scroll-message></app-scroll-message>

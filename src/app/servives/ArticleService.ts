@@ -22,11 +22,7 @@ export class ArticleService {
 
   /** GET heroes from the server */
   getArticles (): Observable<Article[]> {
-    return this.http.get<Article[]>(this.ApiUrl)
-      .pipe(
-        tap(_ => this.log('fetched Articles')),
-        catchError(this.handleError<Article[]>('getArticle', []))
-      );
+    return this.http.get<Article[]>(this.ApiUrl);
   }
 
     /** GET hero by id. Return `undefined` when id not found */
@@ -34,7 +30,7 @@ export class ArticleService {
       const url = `${this.ApiUrl}/?id=${id}`;
       return this.http.get<Article[]>(url)
         .pipe(
-          map(heroes => heroes[0]), // returns a {0|1} element array
+          map(articles => articles[0]), // returns a {0|1} element array
           tap(h => {
             const outcome = h ? `fetched` : `did not find`;
           }),
@@ -45,10 +41,7 @@ export class ArticleService {
     /** GET hero by id. Will 404 if id not found */
     getArticle(id: string): Observable<Article> {
       const url = `${this.ApiUrl}/${id}`;
-      return this.http.get<Article>(url).pipe(
-        tap(_ => this.log('get Article')),
-        catchError(this.handleError<Article>(`getArticle id=${id}`))
-      );
+      return this.http.get<Article>(url);
     }
 
      /** GET hero by id. Will 404 if id not found */
