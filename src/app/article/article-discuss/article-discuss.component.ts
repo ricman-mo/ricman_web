@@ -16,6 +16,7 @@ export class ArticleDiscussComponent implements OnInit {
   isLogin = false;
   currentUser:any;
   returnURl =''
+  loadTime = '';
   constructor(private articleDiscussService: ArticleDiscussService,
     private storageService :TokenStorageService,
     private router: Router) {}
@@ -51,13 +52,15 @@ export class ArticleDiscussComponent implements OnInit {
     comment.articleId = this.articleId;
     comment.parentId = '';
     this.articleDiscussService.addDisscuss(comment).subscribe(response =>{
-      //reload
-      console.log(response);
+      this.loadTime = new Date().toUTCString();
     })
   }
 
   onLogin() {
     this.router.navigate(['/login'], { queryParams: { returnUrl: this.returnURl } });
+  }
+  onRegister () {
+    this.router.navigate(['/register'], { queryParams: { returnUrl: this.returnURl } });
   }
 
 }

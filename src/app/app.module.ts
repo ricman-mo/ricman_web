@@ -17,7 +17,6 @@ import { LMarkdownEditorModule } from 'ngx-markdown-editor';
 import { ArticleViewerComponent } from './article/article-viewer/article-viewer.component';
 import { ArticleEditComponent } from './article/article-edit/article-edit.component';
 import { ArticleDiscussComponent } from './article/article-discuss/article-discuss.component';
-import { ArticleCommentHotComponent } from './article/article-comment-hot/article-comment-hot.component';
 import { ArticleCommentNewComponent } from './article/article-comment-new/article-comment-new.component';
 import { ArticleOverBadgeComponent } from './article/article-over-badge/article-over-badge.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -32,6 +31,7 @@ import { AdminEntryComponent, AdminArticleTreeComponent ,AdminArticleLabelCompon
 import { ModalComponent} from './components/rc-modal/';
 import { AdminArticleListByCategoryComponent } from './admin/admin-article-list-by-category/admin-article-list-by-category.component';
 import { AdminArticleEditComponent } from './admin/admin-article-edit/admin-article-edit.component';
+import { ArticleCommentListComponent } from './article/article-comment-list/article-comment-list.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +45,6 @@ import { AdminArticleEditComponent } from './admin/admin-article-edit/admin-arti
     ArticleViewerComponent,
     ArticleEditComponent,
     ArticleDiscussComponent,
-    ArticleCommentHotComponent,
     ArticleCommentNewComponent,
     ArticleOverBadgeComponent,
     MainCarouselComponent,
@@ -59,7 +58,8 @@ import { AdminArticleEditComponent } from './admin/admin-article-edit/admin-arti
     AdminArticleLabelComponent,
     ModalComponent,
     AdminArticleListByCategoryComponent,
-    AdminArticleEditComponent
+    AdminArticleEditComponent,
+    ArticleCommentListComponent
   ],
   imports: [
     BrowserModule,

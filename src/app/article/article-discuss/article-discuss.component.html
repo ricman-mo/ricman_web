@@ -11,14 +11,9 @@
         </div>
     </div>
     <div class="noLogin-container" *ngIf="!isLogin">
-    注册用户登录后才能发表评论，请 <a  [routerLink]="" (click)="onLogin()">登录</a> 或 <a [routerLink]="['/register']">注册</a></div>
+    注册用户登录后才能发表评论，请 <a  [routerLink]="" (click)="onLogin()">登录</a> 或 <a [routerLink]="" (click)="onRegister()">注册</a></div>
   </div>
   <div class="discuss-list">
-   <h3>热门评论</h3>
-   <app-article-comment></app-article-comment>
-  </div>
-  <div class="discuss-list-new">
-   <h3>最新评论</h3>
-   <app-article-comment></app-article-comment>
+    <article-comment-list [articleId]="articleId"></article-comment-list>
   </div>
 </div>

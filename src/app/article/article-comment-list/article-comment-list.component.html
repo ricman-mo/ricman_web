@@ -1,0 +1,14 @@
+  <div class="discuss-list-container">
+      <div class="discuss-list-hot" >
+        <h3>热门评论</h3>
+        <app-article-comment  *ngFor="let item of hotComments"   [articleId] = "item.articleId" 
+        [loadTime] = "loadTime"
+        ></app-article-comment>
+     </div>
+    <div class="discuss-list-new">
+      <h3>最新评论</h3>
+      <app-article-comment *ngFor="let item of allcomments"   [articleId] = "item.articleId" 
+          [loadTime] = "loadTime"></app-article-comment>
+    </div>
+  </div>
+
