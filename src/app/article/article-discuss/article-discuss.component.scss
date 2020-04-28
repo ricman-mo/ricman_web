@@ -4,8 +4,30 @@
     padding: 0px;
     padding-top: 15px;
     .textarea-container {
-      width: 100%;
+      width:100%; 
+      border:1px solid black;
+      .textarea-box {
+        width: 100%;
+        border-style:none none dashed none; 
+        border-color:black; 
+        display:block;
+        box-sizing:border-box;
+        border-width:1px;
+        margin-bottom:1px;
+      }
+      .submit-button-div {
+        width:100%; 
+        box-sizing:border-box;
+         height:35px;
+         padding:5px;
+      }
     }
+    .noLogin-container {
+      width: 100%;
+      height: 100px;
+      border:1px solid black;
+    }
+    
   }
   .discuss-list{
     padding-top: 15px;

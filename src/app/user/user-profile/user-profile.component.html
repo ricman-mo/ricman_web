@@ -1,0 +1,59 @@
+    <div class= "user-profile-container d-flex flex-column bd-highlight mb-3">
+    <div class="p-2 bd-highlight">  
+        <label class="hoverable" for="fileInput">
+        <img [src]="imagedata"> 
+        <div class="hover-text">更新头像</div>
+        <div class="background"></div>
+        </label>
+        <br/>
+        <input id="fileInput"  type='file' (change)="onSelectFile($event)">
+        <div *ngIf="changeImage">
+          <button *ngIf="changeImage" (click)="delete()" >取消</button>
+        </div>
+    </div>
+    <div class="p-2 bd-highlight">
+      <table class="table">
+        <tbody class="col-md-12">
+            <tr>
+            <th scope="row">账号</th>
+            <td>{{username}}</td>
+            </tr>
+             <tr>
+            <th scope="row">昵称</th>
+            <td><input type='text'  [(ngModel)]="displayName"></td>
+            </tr>
+            <tr>
+            <th scope="row">姓别</th>
+            <td>
+                <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="customRadioInline1"
+                [value]='0' [(ngModel)]="gender"
+                name="customRadioInline1" class="custom-control-input">
+                <label class="custom-control-label" for="customRadioInline1">男</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="customRadioInline2" name="customRadioInline1"
+                [value]='1' [(ngModel)]="gender"
+                class="custom-control-input">
+                <label class="custom-control-label" for="customRadioInline2">女</label>
+                </div>
+            </td>
+            </tr>
+            <tr>
+            <th scope="row">
+           个人简介
+            </th>
+            <td>
+               <div class="mb-3">
+                <textarea class="form-control"
+                [(ngModel)]="description"
+                 id="validationTextarea" 
+                 placeholder="个人简介" required></textarea>
+               </div>
+            </td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="p-2 bd-highlight"><button (click)="onSave()"  class="pull-right">保存</button></div>
+   </div>

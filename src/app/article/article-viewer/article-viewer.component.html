@@ -1,11 +1,16 @@
 <div class="container article-container">
   <div class ="article-information-container"> 
-    <markdown  lass="variable-binding" [data]="markdown_context"></markdown>
+    <markdown  lass="variable-binding" [data]="current_article.context"></markdown>
   </div>
   <div class="article-discuss-container"> 
-    <app-article-discuss></app-article-discuss>
+    <app-article-discuss 
+    [articleId] = "articleId"
+    ></app-article-discuss>
   </div>
   <div class="arcticle-over-badge-warp">
-  <app-article-over-badge> </app-article-over-badge>
+  <app-article-over-badge  
+   [collectionNum] = "current_article.collectionCount"
+    [commentNum] = "current_article.commentCount"
+    [likeNum] = "current_article.likeCount"> </app-article-over-badge>
   </div>
 </div>

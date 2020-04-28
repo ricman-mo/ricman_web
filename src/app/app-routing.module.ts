@@ -12,17 +12,19 @@ import { AuthGuard } from './utility';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AdminEntryComponent, AdminArticleTreeComponent ,AdminArticleLabelComponent} from './admin';
+import { UserProfileComponent } from './user/user-profile/user-profile.component';
 
 const routes: Routes = [
   { path: '', component: AppLayoutComponent ,
   children: [
     { path: '', component: HomeComponent, pathMatch: 'full'},
     { path: 'view', component: MarkdownViewerComponent},
-    { path: 'article', component: ArticleViewerComponent},
+    { path: 'article/:id', component: ArticleViewerComponent},
   ]},
   { path: 'admin_ricman', component: AdminEntryComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'userprofile', component: UserProfileComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
 

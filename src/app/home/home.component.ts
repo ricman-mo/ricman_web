@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ArticleService, TokenStorageService} from '../servives';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,23 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  policies: any;
+  atricles: any;
 
-  constructor() { }
+  constructor(private articleService:ArticleService) { }
 
   
 
   ngOnInit() {
-    this.policies = [
-      {id: 0, name: "policy001"},
-      {id: 2, name: "policy002"},
-      {id: 3, name: "policy003"},
-      {id: 4, name: "policy004"},
-      {id: 5, name: "policy005"}, 
-    ];
+    this.articleService.getArticles().subscribe(items=>{
+      this.atricles = items;
+      console.log(items);
+    })
   }
-  image1_src='assets/Desert.jpg';
-  image2_src='assets/Jellyfish.jpg';
-  image3_src='assets/Lighthouse.jpg';
+
+
 
 }
