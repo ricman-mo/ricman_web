@@ -15,13 +15,25 @@
       </li>
    
       <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" >关于博主</a>
+        <a class="nav-link disabled" href="#" tabindex="-1" >联系博主</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+   
+    <ul class="navbar-nav ml-auto">
+       <li class="nav-item" *ngIf="!isLogin">
+        <a class="nav-link" href="/login" tabindex="-1" >登录</a>
+      </li>
+      <li class="nav-item dropdown" *ngIf="isLogin">
+        <a class="nav-link dropdown-toggle" href="#" id="currentUserDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{currentUserName}}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="currentUserDropdownMenuLink">
+          <a class="dropdown-item" href="/userprofile">我的档案</a>
+          <a class="dropdown-item" [routerLink]="" (click)="logout()">退出</a>
+        </div>
+      </li>
+    </ul>
+   
   </div>
 </nav>
 </div>

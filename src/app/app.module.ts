@@ -32,6 +32,8 @@ import { ModalComponent} from './components/rc-modal/';
 import { AdminArticleListByCategoryComponent } from './admin/admin-article-list-by-category/admin-article-list-by-category.component';
 import { AdminArticleEditComponent } from './admin/admin-article-edit/admin-article-edit.component';
 import { ArticleCommentListComponent } from './article/article-comment-list/article-comment-list.component';
+import { UserProfileComponent } from './user/user-profile/user-profile.component';
+import { UploadFilesComponent } from './components/upload-files/upload-files.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,9 @@ import { ArticleCommentListComponent } from './article/article-comment-list/arti
     ModalComponent,
     AdminArticleListByCategoryComponent,
     AdminArticleEditComponent,
-    ArticleCommentListComponent
+    ArticleCommentListComponent,
+    UserProfileComponent,
+    UploadFilesComponent
   ],
   imports: [
     BrowserModule,

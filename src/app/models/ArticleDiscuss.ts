@@ -6,4 +6,5 @@ export class ArticleDiscuss {
   likeCount:string;
   likeAuthors: string[];
   parentId:string;
+  commentTime:string;
 }

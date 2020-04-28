@@ -1,13 +1,13 @@
 import { Component, OnInit ,Input} from '@angular/core';
-
+import {ArticleDiscuss} from '../../models'
 @Component({
   selector: 'app-article-comment',
   templateUrl: './article-comment-new.component.html',
   styleUrls: ['./article-comment-new.component.scss']
 })
 export class ArticleCommentNewComponent implements OnInit {
-  @Input() articleId: string ;
-  @Input() commentType: string ;
+  @Input() commentId: string ;
+  @Input() comment: ArticleDiscuss ;
 
   private _loadTime:string ;
 
