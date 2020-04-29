@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService} from '../services';
 import { ArticleService, TokenStorageService} from '../../servives';
+import { MarkdownService } from 'ngx-markdown';
 import {Article} from '../../models'
 @Component({
   selector: 'admin-article-edit',
@@ -9,12 +10,17 @@ import {Article} from '../../models'
 })
 export class AdminArticleEditComponent implements OnInit {
 
+
+
   articleTitle= 'datekkk'
   markdowndata = '';
   categoryId = '';
   constructor(private messageService: MessageService,
     private articleService:ArticleService,
-    private storageService:TokenStorageService) { }
+    private storageService:TokenStorageService,
+    private markdownService: MarkdownService) {
+      this.doUpload = this.doUpload.bind(this);  // This is very important.
+     }
 
   ngOnInit() {
     this.messageService.currentMessage.subscribe(message=>{
@@ -25,6 +31,11 @@ export class AdminArticleEditComponent implements OnInit {
         this.markdowndata =message.data.context ? message.data.context:'';
       }
     })
+
+    this.markdownService.renderer.image = (href, title,text)=>{
+      const escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
+      return `<image src="${href}" width="150px" height="150px" alt="${escapedText}">`
+    }
   }
 
   onSave() {
@@ -37,6 +48,13 @@ export class AdminArticleEditComponent implements OnInit {
     this.articleService.addArticle(data).subscribe(response =>{
       console.log('OK');
     })
+  }
+  doUpload(files: Array<File>) {
+    // do upload file by yourself
+    for (let file of files) {
+      console.log(file.name);
+    }
+    console.log('OK');
   }
 
 }

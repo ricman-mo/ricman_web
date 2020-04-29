@@ -1,6 +1,30 @@
 .article-container {
   padding-bottom: 100px;
+  img {
+    width:150px;
+    height:100px;
+    border: 1px solid blue;
+ }
 
+  .article-information-container {
+    p:nth-child(2n+1) img {
+      width:150px;
+      height:100px;
+     border: 1px solid blue;
+   }
+    p:nth-child(2n) img {
+        width:150px;
+        height:100px;
+      border: 1px solid blue;
+    }
+  }
+
+
+   .article-information-container p:nth-of-type(2n+1) img {
+      width:150px;
+      height:100px;
+      border: 1px solid blue;
+   }
   .arcticle-over-badge-warp {
     width: 100;
     position: fixed;

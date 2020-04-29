@@ -1,10 +1,11 @@
 <div class="container article-comment-container">
   <div class="article-comment-author-wrap">
     <div class="author-header">
-        <a href="{{authorProfile}}"><img class="author-img" bind-src="authorHeaderSrc" alt="authorName" /></a>
+        <a href="{{authorProfile}}">
+        <img class="author-img" [src]="authorHeaderdata" alt="authorName" /></a>
     </div>
     <div  class="author-name">
-        <a href="{{authorProfile}}"> <i  class="article-author-title">{{comment.authorName}}</i></a>
+        <a href="{{authorProfile}}"> <i  class="article-author-title">{{authorName}}</i></a>
     </div>
   </div>
 
@@ -12,15 +13,15 @@
    <p class="article-comment-context">{{comment.context}}</p>
   </div>
   <div class="article-comment-interaction-wrap">
-  <span class="comment-time">{{comment.commentTime}}</span>
+  <span class="comment-time">{{commentTime}}</span>
   <div class="comment-operate">
-  <span class="operate-item">
+  <span class="operate-item" (click)= like()>
    <i class="fa fa-thumbs-up"></i>
-    <i class="item-count">{{comment.likeCount}}</i>
+    <i class="item-count" >{{likeCount}}</i>
    </span>
-    <span class="operate-item">
+    <span class="operate-item" (click)= unlike()>
     <i class="fa fa-thumbs-down"></i>
-    <i  class="item-count">{{comment.unlikeNumber}}</i>
+    <i  class="item-count" >{{unlikeCount}}</i>
    </span>
     <span class="operate-item">
     <i class="fa fa-ellipsis-h"></i>

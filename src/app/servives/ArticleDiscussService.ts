@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders ,HttpRequest} from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -66,6 +66,11 @@ export class ArticleDiscussService {
         tap(_ => this.log(`deleted ArticleDiscuss id=${id}`)),
         catchError(this.handleError<ArticleDiscuss>('delete Category'))
       );
+    }
+
+    UpdateDisscuss (data: any, commentId:String): Observable<any> {
+      const req = new HttpRequest('PATCH', `${this.ApiUrl}/${commentId}`, data, this.httpOptions);
+      return this.http.request(req);
     }
 
     private log(message: string) {  

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MarkdownService } from 'ngx-markdown';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { ArticleService, TokenStorageService} from '../../servives';
@@ -15,7 +16,8 @@ export class ArticleViewerComponent implements OnInit {
   articleId='';
   constructor(private articleService:ArticleService,
     private storageService:TokenStorageService,
-    private activateRoute: ActivatedRoute
+    private activateRoute: ActivatedRoute,
+    private markdownService: MarkdownService
     ) { 
       
     }
@@ -33,6 +35,11 @@ export class ArticleViewerComponent implements OnInit {
       this.current_article.collectionCount = '0';
       this.articleId = this.current_article.id;
     });
+
+    this.markdownService.renderer.image = (href, title,text)=>{
+      const escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
+      return `<image src="${href}" width="150px" height="150px" alt="${escapedText}" >`
+    }
   
   }
 
