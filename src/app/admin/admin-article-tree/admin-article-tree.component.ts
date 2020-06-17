@@ -1,5 +1,6 @@
 import { Component, OnInit, EventEmitter,Output } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { Router } from "@angular/router";
 import { ModalComponent} from '../../components/rc-modal/';
 import { MessageService} from '../services/MessageService';
 import { ArticleCategoryService, TokenStorageService} from '../../servives';
@@ -19,7 +20,8 @@ export class AdminArticleTreeComponent implements OnInit {
   constructor(private modalService: NgbModal, 
     private messageService: MessageService,
     private storageService :TokenStorageService,
-    private articleCategoryService:ArticleCategoryService) { }
+    private articleCategoryService:ArticleCategoryService,
+    private router: Router) { }
 
   ngOnInit() {
     let currentUser = this.storageService.getCurrentUser();
@@ -62,5 +64,9 @@ export class AdminArticleTreeComponent implements OnInit {
     }, (reason) => {
       console.log(reason);
     });
+  }
+
+  goIndex() {
+    this.router.navigate(["/"]);
   }
 }

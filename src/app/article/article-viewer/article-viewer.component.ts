@@ -38,7 +38,12 @@ export class ArticleViewerComponent implements OnInit {
 
     this.markdownService.renderer.image = (href, title,text)=>{
       const escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
-      return `<image src="${href}" width="150px" height="150px" alt="${escapedText}" >`
+      let out = `<img style="max-width:100%;border:1px solid #808080;" src="${href}" alt="${text}"`;
+      if (title) {
+        out += ` title="${title}"`;
+      }
+      out +=  ">";
+      return out;
     }
   
   }

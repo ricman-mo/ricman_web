@@ -2,7 +2,7 @@
   <div><input class="w-100 article-title-input" [(ngModel)]="articleTitle"></div>
   <div class="admin-article-edit-tool">
     <md-editor name="Content" 
-      [upload]="doUpload" 
+      [upload]="doUpload"
       [preRender]="preRenderFunc" 
       [(ngModel)]="markdowndata" 
       [mode]="mode" 

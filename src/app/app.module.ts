@@ -13,7 +13,7 @@ import { AppFooterComponent } from './_layout/app-footer/app-footer.component';
 import { HomeComponent } from './home/home.component';
 import { MarkdownViewerComponent } from './markdown-viewer/markdown-viewer.component';
 import { MarkdownModule } from 'ngx-markdown';
-import { LMarkdownEditorModule } from 'ngx-markdown-editor';
+import { MarkdownEditorComponent,MdImageUploadComponent,MarkdownEditorResizeSensorComponent} from './md-edit';
 import { ArticleViewerComponent } from './article/article-viewer/article-viewer.component';
 import { ArticleEditComponent } from './article/article-edit/article-edit.component';
 import { ArticleDiscussComponent } from './article/article-discuss/article-discuss.component';
@@ -34,6 +34,7 @@ import { AdminArticleEditComponent } from './admin/admin-article-edit/admin-arti
 import { ArticleCommentListComponent } from './article/article-comment-list/article-comment-list.component';
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
 import { UploadFilesComponent } from './components/upload-files/upload-files.component';
+import { MdImageUploadModalComponent } from './md-edit/lib/md-image-upload-modal/md-image-upload-modal.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,11 @@ import { UploadFilesComponent } from './components/upload-files/upload-files.com
     AdminArticleEditComponent,
     ArticleCommentListComponent,
     UserProfileComponent,
-    UploadFilesComponent
+    UploadFilesComponent,
+    MdImageUploadComponent,
+    MarkdownEditorComponent,
+    MarkdownEditorResizeSensorComponent,
+    MdImageUploadModalComponent
   ],
   imports: [
     BrowserModule,
@@ -72,7 +77,6 @@ import { UploadFilesComponent } from './components/upload-files/upload-files.com
     ReactiveFormsModule,
     HttpClientModule,
     MarkdownModule.forRoot({loader: HttpClient}),
-    LMarkdownEditorModule,
     NgbModule,
     NgxTagsInputModule,
     CommonModule,
@@ -88,6 +92,6 @@ import { UploadFilesComponent } from './components/upload-files/upload-files.com
     }
   ],
   bootstrap: [AppComponent],
-  entryComponents: [ ModalComponent ]
+  entryComponents: [ ModalComponent,MdImageUploadModalComponent ]
 })
 export class AppModule { }

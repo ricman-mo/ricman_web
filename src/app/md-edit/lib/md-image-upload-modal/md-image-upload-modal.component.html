@@ -1,0 +1,36 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">上传图片</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<!--- start body-->
+<div class="modal-body">
+  <div class="imaget-upload-container py-1">
+    <div class="row py-1">
+        <div class="col-lg-12 mx-auto">
+            <!-- Upload image input-->
+            <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
+                <input id="upload" type="file" (change)="processFile($event)" 
+			        	type="file" accept="image/*" class="form-control border-0 upload-button">
+                <label id="upload-label" for="upload" class="font-weight-light text-muted upload-label">{{fileName}}</label>
+                <div class="input-group-append">
+                    <label for="upload" class="btn btn-light m-0 rounded-pill px-4"> <i class="fa fa-cloud-upload mr-2 text-muted"></i><small class="text-uppercase font-weight-bold text-muted">Choose file</small></label>
+                </div>
+            </div>
+            <!-- Uploaded image area-->
+            <div class="image-area mt-4 col-lg-12">
+              <img id="imageResult" [src]="imageSrc" alt="" class="img-fluid rounded shadow-sm mx-auto d-block image-preview">
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+<!--- end  body-->
+<div class="modal-footer">
+  <div>
+    <button (click)="onBack()" type="submit" class="btn btn-primary pull-right">确认</button>
+    <button (click)="onCancel()" type="submit" class="btn btn-primary pull-right">取消</button>
+  </div>
+
+</div>

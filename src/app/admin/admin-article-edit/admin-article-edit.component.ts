@@ -15,6 +15,22 @@ export class AdminArticleEditComponent implements OnInit {
   articleTitle= 'datekkk'
   markdowndata = '';
   categoryId = '';
+  private options = {
+    showPreviewPanel: false,
+    enablePreviewContentClick: false,
+    resizable: true,
+    customRender: {
+      image: function (href: string, title: string, text: string) {
+        let out = `<img style="max-width:100%;border:1px solid #808080;" src="${href}" alt="${text}"`;
+        if (title) {
+          out += ` title="${title}"`;
+        }
+        out += (<any>this.options).xhtml ? "/>" : ">";
+        return out;
+      }
+    }
+  };
+
   constructor(private messageService: MessageService,
     private articleService:ArticleService,
     private storageService:TokenStorageService,
@@ -31,11 +47,6 @@ export class AdminArticleEditComponent implements OnInit {
         this.markdowndata =message.data.context ? message.data.context:'';
       }
     })
-
-    this.markdownService.renderer.image = (href, title,text)=>{
-      const escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
-      return `<image src="${href}" width="150px" height="150px" alt="${escapedText}">`
-    }
   }
 
   onSave() {

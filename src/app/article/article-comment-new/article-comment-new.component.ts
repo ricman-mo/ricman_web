@@ -38,7 +38,7 @@ export class ArticleCommentNewComponent implements OnInit {
     private storageService :TokenStorageService) { }
 
   ngOnInit() {
-    this.currentName = this.storageService.getCurrentUser().username;
+    this.currentName = _.get(this.storageService.getCurrentUser(),'username');
     if (this.comment) {
       let uesrname = this.comment.authorName;
       this.initComment();
