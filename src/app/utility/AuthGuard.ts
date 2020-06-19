@@ -16,9 +16,12 @@ export class AuthGuard implements CanActivate {
             // If Have user, validate the session if Ture, so return true
             return true;
         }
-
+        let url = state.url;
+        if (url.startsWith('/api/rest/')) {
+            url = '/'
+           }
         // not logged in so redirect to login page with the return url
-        this.router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
+        this.router.navigate(['/login'], { queryParams: { returnUrl: url } });
         return false;
     }
 }

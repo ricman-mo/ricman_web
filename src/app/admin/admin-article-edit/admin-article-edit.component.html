@@ -7,12 +7,44 @@
       [(ngModel)]="markdowndata" 
       [mode]="mode" 
       [options]="options" 
-       [height]="'85vh'" 
+       [height]="'80vh'" 
       required 
       maxlength="5000">
     </md-editor>
   </div>
-  <div class="pull-right">
-  <button type="button" class="btn btn-primary" (click)="onSave()">保存</button>
+  <div id="article-convert">
+  <div class="article-info"> 
+    <div class="px-2">
+     <img [src]="defaultImage" class="article-default-image" />
+    </div>
+    <div class="px-1 article-image-select-mode">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="mode" 
+        [(ngModel)] ="selectMode"
+        (click)="changeMode()"
+        id="inlineRadio1" [value]="false">
+        <label class="form-check-label" for="inlineRadio1">使用图片文章中的图片</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="mode"
+          [(ngModel)] ="selectMode"
+          (click)="changeMode()"
+         id="inlineRadio2" [value]="true">
+        <label class="form-check-label" for="inlineRadio2">上传封面</label>
+      </div>
+      <div *ngIf="selectMode">
+        <input type="file"  (change)="processFile($event)"  id="uploadControlFile1">
+      </div>
+    </div>
+    <div class="form-group px-1">
+      <label for="exampleInputEmail1">文章简介</label>
+      <input type="input" class="form-control" 
+      id="exampleInputEmail1"  placeholder="文章简介"  [(ngModel)]="description">
+      <small id="emailHelp" class="form-text text-muted">字数不得超过200字</small>
+      </div>
+  </div>
+  <div  class="pull-right">
+   <button type="button" class="btn btn-primary" (click)="onSave()">保存</button>
+  </div>
   </div>
 </div>

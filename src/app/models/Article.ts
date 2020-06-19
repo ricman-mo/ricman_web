@@ -11,9 +11,11 @@ export class Article {
   readCount:string;
   likeCount:string;
   collectionCount:string;
-  coverHref:string;
+  coverImage:string;
   contextOverView:string
   commentCount:string;
   likeAuthors: string[];
   collectionAuthors:string[];
+  description: string;
+  coverMode: boolean;
 }

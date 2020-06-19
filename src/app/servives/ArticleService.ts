@@ -78,9 +78,13 @@ export class ArticleService {
     /** POST: add a new hero to the server */
     addArticle (data: Article): Observable<Article> {
       return this.http.post<Article>(this.ApiUrl, data, this.httpOptions).pipe(
-        tap((newHero: Article) => console.log(`added Article w/ id=${newHero.id}`)),
+        tap((newatricle: Article) => console.log(`added Article w/ id=${newatricle.id}`)),
         catchError(this.handleError<Article>('addArticleo'))
       );
+    }
+
+    updateArticle(data, articleId): Observable<any> {
+      return this.http.patch(`${this.ApiUrl}/${articleId}`,data,this.httpOptions);
     }
   
     /** DELETE: delete the hero from the server */
@@ -93,14 +97,6 @@ export class ArticleService {
         catchError(this.handleError<Article>('delete Article'))
       );
     }
-  
-    /** PUT: update the hero on the server */
-    updateArticle (hero: Article): Observable<any> {
-      return this.http.put(this.ApiUrl, hero, this.httpOptions).pipe(
-        catchError(this.handleError<any>('update Article'))
-      );
-    }
-
     private log(message: string) {  
       console.log(`Article Service: ${message}`);
     }

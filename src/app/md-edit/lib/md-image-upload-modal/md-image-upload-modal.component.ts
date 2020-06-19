@@ -53,9 +53,9 @@ export class MdImageUploadModalComponent implements OnInit {
     this.selectedFile.src = '';
   }
 
-  processFile(event: any) {
-   if(event.target.files && event.target.files[0]) {
-    const file: File = event.target.files[0];
+  processFile(events: any) {
+   if(events.target.files && events.target.files[0]) {
+    const file: File = events.target.files[0];
     const reader = new FileReader();
     this.fileName = file.name;
     reader.addEventListener('load', (event: any) => {
